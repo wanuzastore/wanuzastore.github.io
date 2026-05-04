@@ -2,14 +2,14 @@
   "name": "Wanuza Crochê",
   "short_name": "Wanuza",
   "description": "Itens artesanais de crochê feitos com amor.",
-  "start_url": "./",
+  "start_url": "/",
   "display": "standalone",
   "background_color": "#FAFAFA",
   "theme_color": "#FF5722",
   "orientation": "portrait-primary",
   "icons": [
     {
-      "src": "./icons/icon.svg",
+      "src": "/icons/icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
