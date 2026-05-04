@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" id="themeColorMeta" content="#FF5722" />
+  <meta name="description" content="Wanuza — Itens artesanais de crochê feitos com amor." />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Wanuza" />
+  <title>Wanuza | Itens de Crochê</title>
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./icons/icon.svg" />
+  <link rel="stylesheet" type="text/css" href="./src/styles.css">
+</head>
+<body>
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar" aria-hidden="true" aria-label="Menu lateral">
+    <div class="sidebar-header">
+      <span class="sidebar-logo">Wanuza Store</span>
+      <button class="sidebar-close" id="sidebarClose" aria-label="Fechar menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="sidebar-link" href="#home" onclick="closeSidebar()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Início
+      </a>
+      <a class="sidebar-link" href="#categories" onclick="closeSidebar()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+        Categorias
+      </a>
+      <a class="sidebar-link" href="#products" onclick="closeSidebar()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        Produtos
+      </a>
+      <a class="sidebar-link" href="#about" onclick="closeSidebar()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        Sobre
+      </a>
+    </nav>
+    <div class="sidebar-footer">
+      <button class="theme-toggle-row" id="themeToggleSidebar" aria-label="Alternar tema">
+        <span class="theme-icon-sun">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          Modo Claro
+        </span>
+        <span class="theme-icon-moon">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          Modo Escuro
+        </span>
+      </button>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- APP -->
+  <div class="app">
+
+    <!-- HEADER -->
+    <header class="header" id="home">
+      <button class="icon-btn" id="menuBtn" aria-label="Abrir menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+      <span class="logo">Wanuza Store</span>
+      <div class="header-right">
+        <button class="icon-btn theme-btn" id="themeToggle" aria-label="Alternar tema">
+          <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <button class="icon-btn notif-btn" aria-label="Notificações">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
+          <span class="notif-dot"></span>
+        </button>
+        <button class="icon-btn cart-header-btn" id="cartBtn" aria-label="Carrinho">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge" id="cartBadge">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+
+      <!-- SEARCH -->
+      <div class="search-wrap">
+        <div class="search-box">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="search" id="searchInput" placeholder="Buscar produtos..." autocomplete="off" aria-label="Buscar produtos" />
+          <button class="search-clear" id="searchClear" aria-label="Limpar busca" hidden>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- CAROUSEL -->
+      <section class="carousel-section" aria-label="Destaques">
+        <div class="carousel-viewport">
+          <div class="carousel-track" id="carouselTrack">
+            <!-- Slide 1 -->
+            <div class="slide slide-dark">
+              <div class="slide-content">
+                <span class="slide-tag">Bem-vinda à</span>
+                <h2 class="slide-title">SHOP THE<br/><em>TRENDS</em></h2>
+                <p class="slide-desc">Peças únicas de crochê feitas à mão com fio premium.</p>
+                <button class="slide-btn" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+                  Shop now
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+              <div class="slide-art">
+                <div class="yarn-art">
+                  <div class="yarn-ball y1"></div>
+                  <div class="yarn-ball y2"></div>
+                  <div class="yarn-strand"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Slide 2 -->
+            <div class="slide slide-warm">
+              <div class="slide-content">
+                <span class="slide-tag">Novidades</span>
+                <h2 class="slide-title">Coleção<br/><em>Casa</em></h2>
+                <p class="slide-desc">Tapetes e toalhas artesanais para seu lar.</p>
+                <button class="slide-btn" onclick="filterProducts('casa')">
+                  Explorar
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+              <div class="slide-art">
+                <div class="rug-art"></div>
+              </div>
+            </div>
+            <!-- Slide 3 -->
+            <div class="slide slide-cool">
+              <div class="slide-content">
+                <span class="slide-tag">Especial</span>
+                <h2 class="slide-title">Estilo<br/><em>Pessoal</em></h2>
+                <p class="slide-desc">Bolsas, tocas e acessórios que expressam você.</p>
+                <button class="slide-btn" onclick="filterProducts('pessoal')">
+                  Descobrir
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+              <div class="slide-art">
+                <div class="bag-art"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-footer">
+          <button class="carousel-arrow" id="prevBtn" aria-label="Slide anterior">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <div class="dots" id="carouselDots">
+            <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+            <button class="dot" data-index="1" aria-label="Slide 2"></button>
+            <button class="dot" data-index="2" aria-label="Slide 3"></button>
+          </div>
+          <button class="carousel-arrow" id="nextBtn" aria-label="Próximo slide">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- FEATURED FLOATING SHOWCASE -->
+      <div class="showcase" aria-label="Destaque">
+        <!-- Floating stars -->
+        <div class="star-float sf1" aria-hidden="true">★</div>
+        <div class="star-float sf2" aria-hidden="true">✦</div>
+        <div class="star-float sf3" aria-hidden="true">★</div>
+        <div class="star-float sf4" aria-hidden="true">✦</div>
+
+        <!-- Mini left cards -->
+        <div class="mini-cards">
+          <div class="mini-card">
+            <div class="mini-img">
+              <img src="./produtos/tocas-de-crouche.png" alt="Tocas de Crochê" />
+            </div>
+            <div>
+              <p class="mini-name">Tocas</p>
+              <p class="mini-price">R$ 29,99</p>
+            </div>
+          </div>
+          <div class="mini-card">
+            <div class="mini-img">
+              <img src="./produtos/bolsas-de-crouche.png" alt="Bolsas de Crochê" />
+            </div>
+            <div>
+              <p class="mini-name">Bolsas</p>
+              <p class="mini-price">R$ 59,99</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic island pill -->
+        <div class="dynamic-pill" aria-hidden="true">
+          <span class="pill-dot"></span>
+          <span>🧶 Nova coleção disponível!</span>
+        </div>
+
+        <!-- Main featured card -->
+        <div class="featured-card">
+          <div class="featured-img">
+            <img src="./produtos/toalhas-de-mesa.png" alt="Toalhas de Mesa" class="featured-img-real" />
+          </div>
+          <div class="featured-body">
+            <div class="stars-row" aria-label="Avaliação 4.9 de 5">
+              <span class="star-filled">★★★★★</span>
+              <span class="rating-num">4.9</span>
+            </div>
+            <p class="featured-name">Toalhas de Mesa</p>
+            <p class="featured-price">R$ 35,00</p>
+            <button class="featured-add-btn" onclick="addToCart(1)" aria-label="Adicionar ao carrinho">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              ao Carrinho
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CATEGORIES -->
+      <section class="categories-section" id="categories" aria-label="Categorias">
+        <div class="section-header">
+          <h3 class="section-title">Categorias</h3>
+          <button class="see-all-btn" onclick="filterProducts('all')">Ver todas</button>
+        </div>
+        <div class="categories-row">
+          <button class="cat-btn active" data-cat="all" onclick="filterProducts('all')" aria-pressed="true">
+            <span class="cat-icon" aria-hidden="true">🧺</span>
+            <span class="cat-label">Todos</span>
+          </button>
+          <button class="cat-btn" data-cat="cozinha" onclick="filterProducts('cozinha')" aria-pressed="false">
+            <span class="cat-icon" aria-hidden="true">🍳</span>
+            <span class="cat-label">Cozinha</span>
+          </button>
+          <button class="cat-btn" data-cat="quarto" onclick="filterProducts('quarto')" aria-pressed="false">
+            <span class="cat-icon" aria-hidden="true">🛏️</span>
+            <span class="cat-label">Quarto</span>
+          </button>
+          <button class="cat-btn" data-cat="casa" onclick="filterProducts('casa')" aria-pressed="false">
+            <span class="cat-icon" aria-hidden="true">🏠</span>
+            <span class="cat-label">Casa</span>
+          </button>
+          <button class="cat-btn" data-cat="pessoal" onclick="filterProducts('pessoal')" aria-pressed="false">
+            <span class="cat-icon" aria-hidden="true">👤</span>
+            <span class="cat-label">Pessoal</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- PRODUCTS -->
+      <section class="products-section" id="products" aria-label="Produtos">
+        <div class="section-header">
+          <h3 class="section-title" id="productsTitle">Produtos</h3>
+          <button class="see-all-btn" onclick="filterProducts('all')">Ver todos</button>
+        </div>
+        <div class="products-grid" id="productsGrid"></div>
+        <div class="empty-state" id="emptyState" hidden>
+          <span aria-hidden="true">🔍</span>
+          <p>Nenhum produto encontrado.</p>
+          <button onclick="filterProducts('all')">Ver todos</button>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="about-section" id="about" aria-label="Sobre a Wanuza">
+        <div class="about-card">
+          <div class="about-icon" aria-hidden="true">🧶</div>
+          <h3 class="about-title">Feito com Amor</h3>
+          <p class="about-text">Cada peça é criada artesanalmente com fios de alta qualidade, trazendo charme, conforto e personalidade para o seu lar e estilo de vida.</p>
+          <div class="about-stats">
+            <div class="stat-item">
+              <span class="stat-num">200+</span>
+              <span class="stat-label">Clientes</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">50+</span>
+              <span class="stat-label">Produtos</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">4.9</span>
+              <span class="stat-label">Avaliação</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- BOTTOM NAV -->
+    <nav class="bottom-nav" aria-label="Navegação principal">
+      <button class="nav-btn active" data-nav="home" onclick="navTo('home')" aria-label="Início">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        <span>Home</span>
+      </button>
+      <button class="nav-btn" data-nav="categories" onclick="navTo('categories')" aria-label="Categorias">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+        <span>Categorias</span>
+      </button>
+      <button class="nav-btn nav-cart-btn" id="navCartBtn" aria-label="Abrir carrinho">
+        <div class="nav-cart-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="nav-cart-count" id="navCartCount" aria-label="itens no carrinho">0</span>
+        </div>
+        <span>Cart</span>
+      </button>
+      <button class="nav-btn" data-nav="about" onclick="navTo('about')" aria-label="Perfil">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        <span>Perfil</span>
+      </button>
+    </nav>
+
+  </div>
+
+  <!-- CART PANEL -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-panel" id="cartPanel" aria-hidden="true" aria-label="Carrinho de compras">
+    <div class="cart-header">
+      <h2 class="cart-title">Meu Carrinho</h2>
+      <button class="cart-close-btn" id="cartClose" aria-label="Fechar carrinho">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="cart-body">
+      <div class="cart-empty-state" id="cartEmpty">
+        <span aria-hidden="true">🛒</span>
+        <p>Seu carrinho está vazio</p>
+        <button onclick="closeCart()">Continuar comprando</button>
+      </div>
+      <ul class="cart-list" id="cartList" aria-label="Itens no carrinho"></ul>
+    </div>
+    <div class="cart-footer" id="cartFooter" hidden>
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">R$ 0,00</span>
+      </div>
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">R$ 0,00</strong>
+      </div>
+      <button class="whatsapp-btn" id="whatsappBtn" aria-label="Finalizar pedido pelo WhatsApp">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Finalizar pelo WhatsApp
+      </button>
+      <p class="cart-note">Você será redirecionada para o WhatsApp para concluir seu pedido com a vendedora.</p>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-hidden="true" aria-modal="true" role="dialog" aria-label="Visualização do produto">
+    <div class="lb-backdrop"></div>
+    <div class="lb-panel">
+      <button class="lb-close" aria-label="Fechar">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="lb-img-wrap">
+        <img class="lb-img" src="" alt="" tabindex="0" />
+      </div>
+      <div class="lb-info">
+        <p class="lb-name"></p>
+        <p class="lb-price"></p>
+        <button class="lb-add-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          Adicionar ao Carrinho
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./src/main.js"></script>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
