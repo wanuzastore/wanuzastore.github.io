@@ -2,8 +2,8 @@ const CACHE_NAME = 'wanuza-v3';
 const ASSETS = [
   '/',
   '/index.html',
-  '/styles.css',
-  '/app.js',
+  '/src/styles.css',
+  '/src/app.js',
   '/manifest.json',
   '/icons/icon.svg',
 ];
