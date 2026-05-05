@@ -10,7 +10,7 @@ const WHATSAPP_NUMBER = '5592992555260';
 const PRODUCTS = [
   { id: 1, name: 'Toalhas de Mesa',   price: 35.00, category: 'cozinha',  img: './produtos/toalhas-de-mesa.jpg',   emoji: '🧶', bg: 'linear-gradient(135deg, #FFE0D3 0%, #FBBCAB 100%)' },
   { id: 2, name: 'Tapetes de Crochê', price: 89.99, category: 'casa',     img: './produtos/tapetes-de-crouche.jpg', emoji: '🏡', bg: 'linear-gradient(135deg, #D3FFE8 0%, #A8EDCA 100%)' },
-  { id: 3, name: 'Tocas de Crochê',   price: 29.99, category: 'pessoal',  img: './produtos/tocas-de-crouche.jpg',  emoji: '🎀', bg: 'linear-gradient(135deg, #FFD3E8 0%, #FBA8CA 100%)' },
+  { id: 3, name: 'Tocas de Crochê',   price: 30.00, category: 'pessoal',  img: './produtos/tocas-de-crouche.jpg',  emoji: '🎀', bg: 'linear-gradient(135deg, #FFD3E8 0%, #FBA8CA 100%)' },
   { id: 4, name: 'Capas de Almofada', price: 45.00, category: 'quarto',   img: './produtos/capas-de-almofada.jpg', emoji: '🛏️', bg: 'linear-gradient(135deg, #E8D3FF 0%, #CAA8FA 100%)' },
   { id: 5, name: 'Suporte de Vaso',   price: 39.90, category: 'casa',     img: './produtos/suporte-de-vaso.jpg',   emoji: '🌿', bg: 'linear-gradient(135deg, #D3E8FF 0%, #A8CAFA 100%)' },
   { id: 6, name: 'Bolsas de Crochê',  price: 59.99, category: 'pessoal',  img: './produtos/bolsas-de-crouche.jpg', emoji: '👜', bg: 'linear-gradient(135deg, #FFE8D3 0%, #FACAAA 100%)' },
