@@ -1,4 +1,4 @@
-const CACHE_NAME = 'wanuza-v3';
+const CACHE_NAME = 'wanuza-v3.0.1';
 const ASSETS = [
   '/',
   '/index.html',
