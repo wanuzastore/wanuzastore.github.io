@@ -17,6 +17,8 @@ const PRODUCTS = [
   { id: 7, name: 'Porta-Utensílios',  price: 28.90, category: 'cozinha',  img: './produtos/porta-utensilios.jpg',  emoji: '🍳', bg: 'linear-gradient(135deg, #FFF3D3 0%, #FAE0A8 100%)' },
   { id: 8, name: 'Xale de Crochê',    price: 79.99, category: 'pessoal',  img: './produtos/xale-de-crouche.jpg',   emoji: '🧣', bg: 'linear-gradient(135deg, #FFD3D3 0%, #FAA8A8 100%)' },
   { id: 9, name: 'Toca de Crochê Azul',   price: 30.00, category: 'pessoal',  img: './produtos/tocas-de-crouche-azul.jpg',  emoji: '🎀', bg: 'linear-gradient(135deg, #FFD3E8 0%, #FBA8CA 100%)' },
+  { id: 10, name: 'Suporte para Toalha',   price: 28.00, category: 'cozinha',  img: './produtos/suporte-para-toalha.jpg',  emoji: '🏡', bg: 'linear-gradient(135deg, #FFD3E8 0%, #FBA8CA 100%)' },
+  { id: 11, name: 'Blusa de Crochê',   price: 70.00, category: 'pessoal',  img: './produtos/blusa-de-croche.jpg',  emoji: '🎀', bg: 'linear-gradient(135deg, #FFD3E8 0%, #FBA8CA 100%)' },
 
 ];
 
