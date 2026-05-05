@@ -9,35 +9,35 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('/fonts/inter-400.woff2') format('woff2');
+  src: url('./fonts/inter-400.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('/fonts/inter-500.woff2') format('woff2');
+  src: url('./fonts/inter-500.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('/fonts/inter-600.woff2') format('woff2');
+  src: url('./fonts/inter-600.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('/fonts/inter-700.woff2') format('woff2');
+  src: url('./fonts/inter-700.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Inter';
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url('/fonts/inter-800.woff2') format('woff2');
+  src: url('./fonts/inter-800.woff2') format('woff2');
 }
 
 /* ── CUSTOM PROPERTIES ────────────────────── */
@@ -563,8 +563,15 @@ input { font-family: var(--font); }
   border: 1px solid var(--border);
   animation: floatCard 4s ease-in-out infinite;
   transition: background var(--transition-slow);
+  cursor: pointer;
 }
 .mini-card:nth-child(2) { animation-delay: 0.8s; }
+.mini-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--orange);
+}
+.mini-card:active { transform: scale(0.97); }
 
 @keyframes floatCard {
   0%, 100% { transform: translateY(0); }

@@ -447,6 +447,14 @@ function setupNavObserver() {
 // ── FEATURED CARD ─────────────────────────
 function setupFeaturedBtn() {
   document.querySelector('.featured-add-btn')?.addEventListener('click', () => addToCart(1));
+
+  // Featured card image → lightbox produto 1 (Toalhas de Mesa)
+  document.querySelector('.featured-img')?.addEventListener('click', () => openLightbox(PRODUCTS[0]));
+
+  // Mini cards → lightbox dos respectivos produtos
+  const miniCards = document.querySelectorAll('.mini-card');
+  if (miniCards[0]) miniCards[0].addEventListener('click', () => openLightbox(PRODUCTS[2])); // Tocas id:3
+  if (miniCards[1]) miniCards[1].addEventListener('click', () => openLightbox(PRODUCTS[5])); // Bolsas id:6
 }
 
 // ── TOAST ─────────────────────────────────
